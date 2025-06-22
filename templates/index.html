@@ -187,7 +187,11 @@
 
         // Load names.txt dan lanjutkan animasi
         // Koneksi WebSocket
-        const socket = io("https://mergesd.vercel.app/");
+        const socket = io("https://mergesd.vercel.app", {
+          transports: ["polling"],
+          path: "/socket.io"
+        });
+
 
         // Event listener:
         socket.on('new_name', async (name) => {
