@@ -12,7 +12,7 @@ def index():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    chat = pytchat.LiveChat(video_id="b85stPjfY1Y")
+    chat = pytchat.create(video_id="b85stPjfY1Y")
 
     @socketio.on('connect')
     def handle_connect():
